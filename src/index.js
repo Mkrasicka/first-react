@@ -15,26 +15,18 @@ const BookList = () => {
 };
 
 const Book = () => {
+  const title = "5 Ingredients Mediterranean: Simple Incredible Food";
+  const author = "Jamie Oliver";
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img
+        src="./images/first_book.jpeg"
+        alt="5 Ingredients Mediterranean: Simple Incredible Food"
+      />
+      <h2>{title}</h2>
+      <h4>{author.toUpperCase()}</h4>
     </article>
   );
-};
-
-const Image = () => (
-  <img
-    src="https://images-eu.ssl-images-amazon.com/images/I/91QaYnD9RaL._AC_UL900_SR900,600_.jpg"
-    alt="5 Ingredients Mediterranean: Simple Incredible Food"
-  />
-);
-const Title = () => (
-  <h2>5 Ingredients Mediterranean: Simple Incredible Food</h2>
-);
-const Author = () => {
-  return <h4>Jamie Oliver</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -42,3 +34,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<BookList />);
 
 export default BookList;
+
+//     color: "#617D98", // todo:
+// fontSize: "0.75rem", //!
+// marginTop: "0.5rem", //?
