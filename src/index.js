@@ -19,14 +19,15 @@ const books = [
 ];
 
 const BookList = () => {
+  const getBook = (id) => {
+    const book = books.find((book) => book.id === 1);
+    console.log(book);
+  };
+
   return (
     <section className="booklist">
       {books.map((book) => {
-        // ! To pass the object
-        // const { img, title, author, id } = book;
-        // return <Book img={img} title={title} author={author} key={id} />;
-        // ! Use spread operator approach for objects
-        return <Book {...book} key={book.id} />;
+        return <Book {...book} key={book.id} getBook={getBook} />;
       })}
     </section>
   );
@@ -34,12 +35,14 @@ const BookList = () => {
 
 const Book = (props) => {
   // ! Set what properties we can access so you don't need to do props.img props.title props.author
-  const { img, title, author } = props;
+  const { img, title, author, getBook, id } = props;
   console.log(props);
+
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
+      <button onClick={() => getBook(id)}>BUY</button>
       <h4>{author.toUpperCase()}</h4>
       {/* {children} */}
     </article>
