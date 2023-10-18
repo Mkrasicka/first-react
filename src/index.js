@@ -3,42 +3,42 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-const firstBook = {
-  author: "Jamie oliver",
-  title: "5 Ingredients Mediterranean: Simple Incredible Food",
-  img: "./images/first_book.jpeg",
-};
-
-const secondBook = {
-  author: "Richard Osman",
-  title: "The Last Devil To Die: The Thursday Murder Club 4",
-  img: "https://images-eu.ssl-images-amazon.com/images/I/71Ja+kWW-DL._AC_UL900_SR900,600_.jpg",
-};
+const books = [
+  {
+    author: "Jamie oliver",
+    title: "5 Ingredients Mediterranean: Simple Incredible Food",
+    img: "./images/first_book.jpeg",
+    id: 1,
+  },
+  {
+    author: "Richard Osman",
+    title: "The Last Devil To Die: The Thursday Murder Club 4",
+    img: "https://images-eu.ssl-images-amazon.com/images/I/71Ja+kWW-DL._AC_UL900_SR900,600_.jpg",
+    id: 2,
+  },
+];
 
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book
-        author={firstBook.author}
-        title={firstBook.title}
-        img={firstBook.img}
-      />
-      <Book
-        author={secondBook.author}
-        title={secondBook.title}
-        img={secondBook.img}
-      />
+      {books.map((book) => {
+        const { img, title, author, id } = book;
+        return <Book img={img} title={title} author={author} key={id} />;
+      })}
     </section>
   );
 };
 
 const Book = (props) => {
+  // ! Set what properties we can access so you don't need to do props.img props.title props.author
+  const { img, title, author } = props;
   console.log(props);
   return (
     <article className="book">
-      <img src={props.img} alt={props.title} />
-      <h2>{props.title}</h2>
-      <h4>{props.author.toUpperCase()}</h4>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author.toUpperCase()}</h4>
+      {/* {children} */}
     </article>
   );
 };

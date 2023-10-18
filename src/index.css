@@ -24,6 +24,10 @@ body {
 @media screen and (min-width: 768px) {
   .booklist {
     grid-template-columns: repeat(3, 1fr);
+    /**
+    * ! align items is if i want the card to take only the space of the content for each card
+     */
+    align-items: start;
   }
 }
 
@@ -50,6 +54,10 @@ body {
   letter-spacing: 2px;
   font-size: 0.75rem;
   margin-top: 0.5rem;
+}
+
+.book p {
+  margin: 1rem 0 0.5rem;
 }
 /**
   * ! do this
