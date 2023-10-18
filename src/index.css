@@ -27,7 +27,7 @@ body {
     /**
     * ! align items is if i want the card to take only the space of the content for each card
      */
-    align-items: start;
+    /* align-items: start; */
   }
 }
 
