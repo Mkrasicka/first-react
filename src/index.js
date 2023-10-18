@@ -22,8 +22,11 @@ const BookList = () => {
   return (
     <section className="booklist">
       {books.map((book) => {
-        const { img, title, author, id } = book;
-        return <Book img={img} title={title} author={author} key={id} />;
+        // ! To pass the object
+        // const { img, title, author, id } = book;
+        // return <Book img={img} title={title} author={author} key={id} />;
+        // ! Use spread operator approach for objects
+        return <Book {...book} key={book.id} />;
       })}
     </section>
   );
